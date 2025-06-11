@@ -1,5 +1,5 @@
 # 💫 About Me:
-Hi there! I’m Kanav Bhardwaj, a CSE graduate from IIITB. Currently, I’m building a passion project of mine, Spotify Bucket List app, to help people discover more music while exploring AI’s potential to enhance user experiences. I enjoy tackling projects that merge creativity and technology.
+Hi there! I’m Kanav Bhardwaj, a CSE graduate from IIITB. I enjoy tackling projects that merge creativity and technology.
 
 
 ## 🌐 Socials:

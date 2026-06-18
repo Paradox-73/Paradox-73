@@ -19,12 +19,15 @@ Hi there! I'm Kanav Bhardwaj, a CSE graduate from IIITB. I build intentional, pr
 ![Chart.js](https://img.shields.io/badge/chart.js-F5788D.svg?style=flat&logo=chart.js&logoColor=white) ![Figma](https://img.shields.io/badge/figma-%23F24E1E.svg?style=flat&logo=figma&logoColor=white) ![Canva](https://img.shields.io/badge/Canva-%2300C4CC.svg?style=flat&logo=Canva&logoColor=white) ![Steam](https://img.shields.io/badge/steam-%23000000.svg?style=flat&logo=steam&logoColor=white) ![nVIDIA](https://img.shields.io/badge/nVIDIA-%2376B900.svg?style=flat&logo=nVIDIA&logoColor=white)
 
 # 📊 GitHub Stats:
+
 ![](http://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=Paradox-73&theme=tokyonight)<br/>
+
 [![GitHub Streak](https://github-readme-streak-stats.herokuapp.com?user=Paradox-73&theme=tokyonight&hide_border=true&date_format=j%20M%5B%20Y%5D&mode=weekly)](https://git.io/streak-stats)<br/>
+
 ![](http://github-profile-summary-cards.vercel.app/api/cards/stats?username=Paradox-73&theme=tokyonight)
 
-### 🔝 Top Contributed Repo
-![](https://github-contributor-stats.vercel.app/api?username=Paradox-73&limit=5&theme=tokyonight&combine_all_yearly_contributions=true)
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Paradox-73&layout=compact&theme=tokyonight&hide_border=true" height="350" alt="Top Languages" />
 
 ---
+
 ![Profile Views](https://komarev.com/ghpvc/?username=Paradox-73&label=Profile%20views&color=blueviolet&style=flat)

@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="860" height="316" viewBox="0 0 860 316" role="img" aria-label="Experience and education">
+<title>Experience and education</title>
+<defs></defs>
+<style>
+  .t{font-family:'Segoe UI',Ubuntu,'Helvetica Neue',Arial,sans-serif}
+  .m{font-family:'JetBrains Mono','Fira Code',ui-monospace,'SFMono-Regular',Consolas,monospace}
+  /* Visible by default: a renderer that ignores CSS animation still shows every card. */
+  g.fx{animation:in .6s ease-out both}
+  @keyframes in{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+  @keyframes grow{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+  @keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+
+  @keyframes draw{to{stroke-dashoffset:0}}
+  @media (prefers-reduced-motion:reduce){*{animation:none!important}}
+</style>
+<rect width="860" height="316" rx="14" fill="#13141f"/>
+<rect x=".5" y=".5" width="859" height="315" rx="13.5" fill="none" stroke="#2f3449"/>
+<text x="30" y="38" class="t" font-size="11" fill="#565f89" font-weight="700" text-anchor="start" letter-spacing="2.2">EXPERIENCE &amp; EDUCATION</text><text x="830" y="38" class="t" font-size="11" fill="#9aa5ce" font-weight="400" text-anchor="end">IIIT Bangalore</text><line x1="30" y1="54" x2="830" y2="54" stroke="#2f3449"/><line x1="39" y1="90" x2="39" y2="242" stroke="#2f3449" stroke-width="2"
+    stroke-dasharray="152" stroke-dashoffset="152"
+    style="animation:draw 1s ease-out .2s both"/><g class="fx" style="animation-delay:260ms"><circle cx="39" cy="90" r="7" fill="#13141f" stroke="#7aa2f7" stroke-width="2.5"/>
+      <circle cx="39" cy="90" r="2.5" fill="#7aa2f7"/>
+      <text x="63" y="95" class="t" font-size="14" fill="#c0caf5" font-weight="700" text-anchor="start">Research Affiliate · IIIT Bangalore</text>
+      <text x="830" y="95" class="m" font-size="11.5" fill="#7aa2f7" font-weight="400" text-anchor="end">Jun 2025 — May 2026</text>
+      <text x="63" y="116" class="t" font-size="12" fill="#9aa5ce" font-weight="400" text-anchor="start">Predictive autoscaling for Dockerized ML workloads with Prophet + LSTM. Benchmarked 5 scaling policies; the</text><text x="63" y="132" class="t" font-size="12" fill="#9aa5ce" font-weight="400" text-anchor="start">buffered policy held under-provisioning to 8 events at 6% cost overhead.</text></g><g class="fx" style="animation-delay:400ms"><circle cx="39" cy="166" r="7" fill="#13141f" stroke="#bb9af7" stroke-width="2.5"/>
+      <circle cx="39" cy="166" r="2.5" fill="#bb9af7"/>
+      <text x="63" y="171" class="t" font-size="14" fill="#c0caf5" font-weight="700" text-anchor="start">Integrated M.Tech, Computer Science · IIIT Bangalore</text>
+      <text x="830" y="171" class="m" font-size="11.5" fill="#bb9af7" font-weight="400" text-anchor="end">Aug 2023 — Jul 2028</text>
+      <text x="63" y="192" class="t" font-size="12" fill="#9aa5ce" font-weight="400" text-anchor="start">CGPA 3.26/4.00. Coursework in machine learning, NLP, recommendation systems, databases, NoSQL and operating</text><text x="63" y="208" class="t" font-size="12" fill="#9aa5ce" font-weight="400" text-anchor="start">systems.</text></g><g class="fx" style="animation-delay:540ms"><circle cx="39" cy="242" r="7" fill="#13141f" stroke="#ff9e64" stroke-width="2.5"/>
+      <circle cx="39" cy="242" r="2.5" fill="#ff9e64"/>
+      <text x="63" y="247" class="t" font-size="14" fill="#c0caf5" font-weight="700" text-anchor="start">Editor and filmmaker</text>
+      <text x="830" y="247" class="m" font-size="11.5" fill="#ff9e64" font-weight="400" text-anchor="end">Off the clock</text>
+      <text x="63" y="268" class="t" font-size="12" fill="#9aa5ce" font-weight="400" text-anchor="start">Editorial Head of 8Bit, the IIIT-B magazine club: led 16 people across 2 editions. Directs short films with</text><text x="63" y="284" class="t" font-size="12" fill="#9aa5ce" font-weight="400" text-anchor="start">an independent group of friends — 6 competition wins.</text></g>
+</svg>

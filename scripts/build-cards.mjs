@@ -11,25 +11,46 @@ const OUT = new URL('../assets/', import.meta.url)
 
 const PROFILE = {
   role: 'ML + full-stack engineer',
-  school: 'CSE, IIIT Bangalore',
+  school: 'Integrated M.Tech CSE, IIIT Bangalore',
   focus: 'Deep RL · graph-hybrid systems · privacy-respecting design',
 }
 
+// Education, experience and the two lines that are not about code.
+const TIMELINE = [
+  {
+    tone: 'blue', when: 'Jun 2025 — May 2026', title: 'Research Affiliate · IIIT Bangalore',
+    detail: 'Predictive autoscaling for Dockerized ML workloads with Prophet + LSTM. Benchmarked 5 scaling policies; the buffered policy held under-provisioning to 8 events at 6% cost overhead.',
+  },
+  {
+    tone: 'purple', when: 'Aug 2023 — Jul 2028', title: 'Integrated M.Tech, Computer Science · IIIT Bangalore',
+    detail: 'CGPA 3.26/4.00. Coursework in machine learning, NLP, recommendation systems, databases, NoSQL and operating systems.',
+  },
+  {
+    tone: 'orange', when: 'Off the clock', title: 'Editor and filmmaker',
+    detail: 'Editorial Head of 8Bit, the IIIT-B magazine club: led 16 people across 2 editions. Directs short films with an independent group of friends — 6 competition wins.',
+  },
+]
+
 const ACHIEVEMENTS = [
   { badge: '1st', tone: 'gold', title: 'Winner — Enable Native SSO in eSignet Go for Mobile Apps', event: "MOSIP Decode '26" },
+  { badge: 'PAPER', tone: 'gold', title: 'Best Paper — Predictive Autoscaling of Dockerised ML Workloads', event: 'ICRACE 2026 · Springer Nature' },
   { badge: 'T50', tone: 'blue', title: 'Top 50 among 32,000+ teams', event: "Amazon ML Challenge '26" },
   { badge: 'T50', tone: 'purple', title: 'Top 50 out of 26,760 teams', event: "Adobe University Hackathon '26" },
   { badge: 'SEL', tone: 'cyan', title: 'Selected — top 3,000 nationwide, taught by Amazon scientists', event: "Amazon ML Summer School '26" },
   { badge: '3rd', tone: 'bronze', title: 'PokerBots — heads-up Discard Hold’em agent', event: "Synergy, IIIT Bangalore '26" },
   { badge: '3rd', tone: 'bronze', title: 'Liar’s Chatroom — Kaggle hackathon', event: "Synergy, IIIT Bangalore '26" },
   { badge: 'SF', tone: 'green', title: 'National Semi-finalist', event: 'Flipkart GRiD 8.0' },
+  { badge: 'JEE', tone: 'cyan', title: 'All India Rank 5,379 of ~1.1M (Main) · 7,763 of ~180K (Advanced)', event: 'JEE 2023' },
 ]
 
+// `note` overrides the repository description when the result matters more than the blurb.
 const FEATURED = [
-  { repo: 'Enable_Native_SSO_in_eSignet_Go_for_Mobile_Apps', title: 'Native SSO · eSignet Go' },
-  { repo: 'PokerBots', title: 'PokerBots · Hakari' },
-  { repo: 'DeepFake_Hackathon', title: 'DeepFake Detector' },
-  { repo: 'Provenance', title: 'Provenance' },
+  { repo: 'Enable_Native_SSO_in_eSignet_Go_for_Mobile_Apps', title: 'Native SSO · eSignet Go', note: "One sign-in across sibling mobile apps via OpenID Connect Native SSO. Winner, MOSIP Decode '26." },
+  { repo: 'Predictive-Auto-Scaling-of-Dockerized-ML-Applications', title: 'Predictive Autoscaling', note: 'Prophet + LSTM autoscaling for Dockerized ML: 8 under-provisioning events at 6% cost overhead. Best Paper, ICRACE 2026.' },
+  { repo: 'Personal_Media_Intelligence_Hub', title: 'Media Intelligence Hub', note: 'Cross-domain taste engine over 1,250+ records in a 93-feature space. R² 0.59; 72.8% of cross-domain picks within ±0.5 stars.' },
+  { repo: 'FedTraffic-RL', title: 'Adaptive Traffic Signals', note: 'DQN signal control in SUMO: median wait down ~80% (250s → 50s), federated-ready through Flower.' },
+  { repo: 'MusicBucket', title: 'MusicBucket', note: 'Geographic music discovery. Incremental Supabase sync beat third-party rate limits for a 25-user closed beta.' },
+  { repo: 'PokerBots', title: 'PokerBots · Hakari', note: "Heads-up Discard Hold’em agent: expected-value play anchored by an embedded CFR strategy. 3rd, Synergy IIIT-B '26." },
 ]
 
 // Tokyo-night palette.
@@ -111,10 +132,19 @@ const gql = async (query, variables) => {
   return j.data
 }
 
+// contributionsCollection only ever covers one year, so ask for every year since the account opened.
+const YEARS = []
+for (let y = 2023; y <= new Date().getUTCFullYear(); y++) YEARS.push(y)
+
 const data = await gql(`query($login:String!){
   user(login:$login){
-    name login bio avatarUrl(size:200) location
+    name login bio avatarUrl(size:200) location createdAt
     followers{totalCount}
+    repositoriesContributedTo(first:1, contributionTypes:[COMMIT,PULL_REQUEST,ISSUE]){totalCount}
+    ${YEARS.map(y => `y${y}: contributionsCollection(from:"${y}-01-01T00:00:00Z", to:"${y}-12-31T23:59:59Z"){
+      totalCommitContributions totalPullRequestContributions totalIssueContributions totalPullRequestReviewContributions
+      contributionCalendar{totalContributions}
+    }`).join('\n')}
     repositories(first:100, ownerAffiliations:OWNER, isFork:false, orderBy:{field:STARGAZERS,direction:DESC}){
       totalCount
       nodes{ name description stargazerCount forkCount
@@ -132,6 +162,15 @@ const data = await gql(`query($login:String!){
 
 const u = data.user
 const repos = u.repositories.nodes
+const lifetime = YEARS.reduce((a, y) => {
+  const d = u[`y${y}`]
+  a.contributions += d.contributionCalendar.totalContributions
+  a.commits += d.totalCommitContributions
+  a.prs += d.totalPullRequestContributions
+  a.issues += d.totalIssueContributions
+  a.reviews += d.totalPullRequestReviewContributions
+  return a
+}, { contributions: 0, commits: 0, prs: 0, issues: 0, reviews: 0 })
 const stars = repos.reduce((a, r) => a + r.stargazerCount, 0)
 const cal = u.contributionsCollection.contributionCalendar
 const days = cal.weeks.flatMap(w => w.contributionDays)
@@ -314,23 +353,109 @@ const write = (name, svg) => { writeFileSync(new URL(name, OUT), svg); console.l
   write('skyline.svg', card(W, H, 'Contribution skyline', body))
 }
 
-// ---------- recent activity (git log) ----------
+// ---------- all-time statistics ----------
 {
-  const W = 860, rows = commits.slice(0, 8)
-  const H = 92 + Math.max(rows.length, 1) * 23 + 24
-  let body = `<rect x="16" y="14" width="${W - 32}" height="26" rx="6" fill="${C.panel}"/>
-    <circle cx="36" cy="27" r="5" fill="${C.red}"/><circle cx="54" cy="27" r="5" fill="${C.yellow}"/><circle cx="72" cy="27" r="5" fill="${C.green}"/>
-    ${text(W / 2, 32, 'paradox-73@github: ~', { size: 11.5, fill: C.mute, anchor: 'middle', mono: true })}`
-  body += fx(80, `${text(28, 66, '$', { size: 13, fill: C.green, mono: true })}${text(44, 66, 'git log --oneline --author=paradox-73', { size: 13, fill: C.text, mono: true })}`)
-  if (!rows.length) body += fx(140, text(28, 92, 'no public pushes in the last 90 days', { size: 12.5, fill: C.mute, mono: true }))
-  rows.forEach((c, i) => {
-    const y = 94 + i * 23
-    body += fx(140 + i * 60, `${text(28, y, c.sha, { size: 12.5, fill: C.yellow, mono: true })}
-      ${text(96, y, clip(c.repo, 190, 12.5, true), { size: 12.5, fill: C.purple, mono: true })}
-      ${text(296, y, clip(c.msg, W - 296 - 110, 12.5, true), { size: 12.5, fill: C.dim, mono: true })}
-      ${text(W - 28, y, ago(c.at), { size: 11.5, fill: C.mute, anchor: 'end', mono: true })}`)
+  const W = 860, cols = 4, gap = 12, pad = 30
+  const tw = Math.round((W - pad * 2 - gap * (cols - 1)) / cols), th = 74
+  const tiles = [
+    ['Contributions', num(lifetime.contributions), C.green], ['Commits', num(lifetime.commits), C.blue],
+    ['Pull requests', num(lifetime.prs), C.purple], ['Issues', num(lifetime.issues), C.orange],
+    ['Repositories', num(u.repositories.totalCount), C.cyan], ['Stars earned', num(stars), C.yellow],
+    ['Contributed to', num(u.repositoriesContributedTo.totalCount), C.red], ['Longest streak', `${longest}d`, C.text],
+  ]
+  const rows = Math.ceil(tiles.length / cols)
+  const H = 76 + rows * (th + gap) + 10
+  const since = new Date(u.createdAt).toLocaleDateString('en-US', { month: 'long', year: 'numeric', timeZone: 'UTC' })
+  let body = headline(pad, 38, 'GitHub by the numbers')
+  body += text(W - pad, 38, `all-time · since ${since}`, { size: 11, fill: C.dim, anchor: 'end' })
+  body += `<line x1="${pad}" y1="54" x2="${W - pad}" y2="54" stroke="${C.line}"/>`
+  tiles.forEach(([k, v, col], i) => {
+    const x = pad + (i % cols) * (tw + gap), y = 76 + Math.floor(i / cols) * (th + gap)
+    body += fx(110 + i * 65, `<rect x="${x}" y="${y}" width="${tw}" height="${th}" rx="10" fill="${C.panel}"/>
+      <rect x="${x}" y="${y}" width="${tw}" height="${th}" rx="10" fill="none" stroke="${col}" stroke-opacity=".22"/>
+      <rect x="${x + 14}" y="${y + 14}" width="${tw - 28}" height="3" rx="1.5" fill="${col}" opacity=".85"
+        style="animation:grow .8s cubic-bezier(.2,.7,.3,1) both;animation-delay:${280 + i * 65}ms;transform-origin:${x + 14}px 0"/>
+      ${text(x + 14, y + 48, v, { size: 24, weight: 700, fill: col, mono: true })}
+      ${text(x + 14, y + 64, k.toUpperCase(), { size: 9, fill: C.mute, ls: 1.4 })}`)
   })
-  write('activity.svg', card(W, H, 'Recent commits', body))
+  write('stats.svg', card(W, H, 'All-time GitHub statistics', body))
+}
+
+// ---------- experience and education ----------
+{
+  const W = 860, pad = 30, rowH = 76
+  const H = 76 + TIMELINE.length * rowH + 12
+  const tone = { blue: C.blue, purple: C.purple, orange: C.orange, green: C.green }
+  let body = headline(pad, 38, 'Experience & education')
+  body += text(W - pad, 38, 'IIIT Bangalore', { size: 11, fill: C.dim, anchor: 'end' })
+  body += `<line x1="${pad}" y1="54" x2="${W - pad}" y2="54" stroke="${C.line}"/>`
+  const lineX = pad + 9, top = 90, bottomY = top + (TIMELINE.length - 1) * rowH
+  body += `<line x1="${lineX}" y1="${top}" x2="${lineX}" y2="${bottomY}" stroke="${C.line}" stroke-width="2"
+    stroke-dasharray="${bottomY - top}" stroke-dashoffset="${bottomY - top}"
+    style="animation:draw 1s ease-out .2s both"/>`
+  TIMELINE.forEach((e, i) => {
+    const y = top + i * rowH, col = tone[e.tone] || C.blue
+    const detail = wrap(e.detail, W - 180, 12, 2)
+    body += fx(260 + i * 140, `<circle cx="${lineX}" cy="${y}" r="7" fill="${C.bg}" stroke="${col}" stroke-width="2.5"/>
+      <circle cx="${lineX}" cy="${y}" r="2.5" fill="${col}"/>
+      ${text(lineX + 24, y + 5, e.title, { size: 14, weight: 700, fill: C.text })}
+      ${text(W - pad, y + 5, e.when, { size: 11.5, fill: col, anchor: 'end', mono: true })}
+      ${detail.map((l, j) => text(lineX + 24, y + 26 + j * 16, l, { size: 12, fill: C.dim })).join('')}`)
+  })
+  write('experience.svg', card(W, H, 'Experience and education', body, '', `
+  @keyframes draw{to{stroke-dashoffset:0}}`))
+}
+
+// ---------- commit mixtape ----------
+{
+  const W = 860, H = 268, tracks = commits.slice(0, 5)
+  // Cassette shell on the left, the commits it "holds" listed as a track list on the right.
+  const cx1 = 128, cx2 = 268, reelY = 186, reelR = 31
+  const defs = `<linearGradient id="tapeLabel" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#ff6ec7" stop-opacity=".9"/><stop offset="50%" stop-color="#bb9af7" stop-opacity=".9"/><stop offset="100%" stop-color="#7aa2f7" stop-opacity=".9"/>
+    </linearGradient>`
+  const css = `
+  .reel{animation:spin 4s linear infinite}
+  .reel2{animation:spin 2.6s linear infinite}
+  @keyframes spin{to{transform:rotate(360deg)}}`
+  const spokes = (cx, cy, r) => Array.from({ length: 6 }, (_, k) => {
+    const a = (k * Math.PI) / 3
+    return `<line x1="${(cx + Math.cos(a) * 9).toFixed(1)}" y1="${(cy + Math.sin(a) * 9).toFixed(1)}" x2="${(cx + Math.cos(a) * r).toFixed(1)}" y2="${(cy + Math.sin(a) * r).toFixed(1)}" stroke="${C.mute}" stroke-width="3" stroke-linecap="round"/>`
+  }).join('')
+
+  let body = headline(30, 38, 'Commit mixtape')
+  body += text(W - 30, 38, `side A · ${num(lifetime.commits)} commits recorded`, { size: 11, fill: C.dim, anchor: 'end' })
+  body += `<line x1="30" y1="54" x2="${W - 30}" y2="54" stroke="${C.line}"/>`
+
+  body += fx(80, `<rect x="30" y="74" width="336" height="172" rx="12" fill="#232738" stroke="${C.line}"/>
+    <rect x="44" y="86" width="308" height="62" rx="6" fill="url(#tapeLabel)" opacity=".85"/>
+    ${text(58, 110, 'PARADOX-73', { size: 15, weight: 700, fill: '#14161f', mono: true, ls: 1.5 })}
+    ${text(58, 130, 'commit history · 2023–2026', { size: 11, fill: '#14161f', mono: true, op: 0.75 })}
+    ${text(338, 110, 'A', { size: 20, weight: 700, fill: '#14161f', mono: true, anchor: 'end' })}
+    <rect x="62" y="156" width="272" height="76" rx="8" fill="#15171f"/>
+    <rect x="${cx1}" y="178" width="${cx2 - cx1}" height="16" fill="#3a3f55"/>
+    <circle cx="48" cy="92" r="3" fill="${C.mute}"/><circle cx="348" cy="92" r="3" fill="${C.mute}"/>
+    <circle cx="48" cy="238" r="3" fill="${C.mute}"/><circle cx="348" cy="238" r="3" fill="${C.mute}"/>`)
+  body += `<g class="reel" style="transform-origin:${cx1}px ${reelY}px">
+      <circle cx="${cx1}" cy="${reelY}" r="${reelR}" fill="#2b3048" stroke="${C.line}"/>
+      <circle cx="${cx1}" cy="${reelY}" r="11" fill="#15171f" stroke="${C.mute}" stroke-width="2"/>${spokes(cx1, reelY, reelR - 4)}
+    </g>
+    <g class="reel2" style="transform-origin:${cx2}px ${reelY}px">
+      <circle cx="${cx2}" cy="${reelY}" r="${reelR - 9}" fill="#2b3048" stroke="${C.line}"/>
+      <circle cx="${cx2}" cy="${reelY}" r="11" fill="#15171f" stroke="${C.mute}" stroke-width="2"/>${spokes(cx2, reelY, reelR - 13)}
+    </g>`
+
+  body += fx(220, text(398, 92, 'TRACK LIST', { size: 10, fill: C.mute, weight: 700, ls: 2 }))
+  if (!tracks.length) body += fx(260, text(398, 120, 'no public pushes in the last 90 days', { size: 12, fill: C.mute, mono: true }))
+  tracks.forEach((c, i) => {
+    const y = 120 + i * 27
+    body += fx(260 + i * 70, `${text(398, y, String(i + 1).padStart(2, '0'), { size: 12, fill: C.purple, mono: true })}
+      ${text(428, y, clip(c.repo, 150, 12, true), { size: 12, fill: C.cyan, mono: true })}
+      ${text(588, y, clip(c.msg, 198, 11.5), { size: 11.5, fill: C.dim })}
+      ${text(W - 30, y, ago(c.at), { size: 11, fill: C.mute, anchor: 'end', mono: true })}`)
+  })
+  body += fx(620, text(398, 246, `${num(lifetime.prs)} pull requests · ${num(lifetime.issues)} issues · ${num(lifetime.contributions)} contributions all-time`, { size: 11, fill: C.mute }))
+  write('mixtape.svg', card(W, H, 'Commit mixtape — recent commits as a cassette track list', body, defs, css))
 }
 
 // ---------- languages ----------
@@ -355,11 +480,11 @@ const write = (name, svg) => { writeFileSync(new URL(name, OUT), svg); console.l
 }
 
 // ---------- project cards ----------
-FEATURED.forEach(({ repo: name, title }, idx) => {
+FEATURED.forEach(({ repo: name, title, note }, idx) => {
   const r = repos.find(x => x.name === name)
   if (!r) { console.warn(`skipped missing repo ${name}`); return }
   const W = 420, H = 176
-  const desc = wrap(r.description || 'No description provided.', W - 56, 12, 3)
+  const desc = wrap(note || r.description || 'No description provided.', W - 56, 12, 3)
   const col = r.primaryLanguage?.color || C.blue
   let body = `<defs><linearGradient id="accent${idx}" x1="0" y1="0" x2="1" y2="0">
       <stop offset="0%" stop-color="${col}"/><stop offset="100%" stop-color="${col}" stop-opacity="0"/></linearGradient></defs>

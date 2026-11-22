@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="860" height="231" viewBox="0 0 860 231" role="img" aria-label="Recent commits">
+<title>Recent commits</title>
+<defs></defs>
+<style>
+  .t{font-family:'Segoe UI',Ubuntu,'Helvetica Neue',Arial,sans-serif}
+  .m{font-family:'JetBrains Mono','Fira Code',ui-monospace,'SFMono-Regular',Consolas,monospace}
+  /* Visible by default: a renderer that ignores CSS animation still shows every card. */
+  g.fx{animation:in .6s ease-out both}
+  @keyframes in{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+  @keyframes grow{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+  @keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+
+  @media (prefers-reduced-motion:reduce){*{animation:none!important}}
+</style>
+<rect width="860" height="231" rx="14" fill="#13141f"/>
+<rect x=".5" y=".5" width="859" height="230" rx="13.5" fill="none" stroke="#2f3449"/>
+<rect x="16" y="14" width="828" height="26" rx="6" fill="#1f2335"/>
+    <circle cx="36" cy="27" r="5" fill="#f7768e"/><circle cx="54" cy="27" r="5" fill="#e0af68"/><circle cx="72" cy="27" r="5" fill="#9ece6a"/>
+    <text x="430" y="32" class="m" font-size="11.5" fill="#565f89" font-weight="400" text-anchor="middle">paradox-73@github: ~</text><g class="fx" style="animation-delay:80ms"><text x="28" y="66" class="m" font-size="13" fill="#9ece6a" font-weight="400" text-anchor="start">$</text><text x="44" y="66" class="m" font-size="13" fill="#c0caf5" font-weight="400" text-anchor="start">git log --oneline --author=paradox-73</text></g><g class="fx" style="animation-delay:140ms"><text x="28" y="94" class="m" font-size="12.5" fill="#e0af68" font-weight="400" text-anchor="start">c75d47d</text>
+      <text x="96" y="94" class="m" font-size="12.5" fill="#bb9af7" font-weight="400" text-anchor="start">Badmosi</text>
+      <text x="296" y="94" class="m" font-size="12.5" fill="#9aa5ce" font-weight="400" text-anchor="start">Add Godot uid files for the new scripts</text>
+      <text x="832" y="94" class="m" font-size="11.5" fill="#565f89" font-weight="400" text-anchor="end">7d ago</text></g><g class="fx" style="animation-delay:200ms"><text x="28" y="117" class="m" font-size="12.5" fill="#e0af68" font-weight="400" text-anchor="start">2fadaca</text>
+      <text x="96" y="117" class="m" font-size="12.5" fill="#bb9af7" font-weight="400" text-anchor="start">NCC-1701</text>
+      <text x="296" y="117" class="m" font-size="12.5" fill="#9aa5ce" font-weight="400" text-anchor="start">Merge Aaryan&apos;s interface fixes on the new look</text>
+      <text x="832" y="117" class="m" font-size="11.5" fill="#565f89" font-weight="400" text-anchor="end">8d ago</text></g><g class="fx" style="animation-delay:260ms"><text x="28" y="140" class="m" font-size="12.5" fill="#e0af68" font-weight="400" text-anchor="start">3ffb615</text>
+      <text x="96" y="140" class="m" font-size="12.5" fill="#bb9af7" font-weight="400" text-anchor="start">GSTR-2B-Reconciler</text>
+      <text x="296" y="140" class="m" font-size="12.5" fill="#9aa5ce" font-weight="400" text-anchor="start">docs(report): metrics and SBOM sections, contributions so f…</text>
+      <text x="832" y="140" class="m" font-size="11.5" fill="#565f89" font-weight="400" text-anchor="end">8d ago</text></g><g class="fx" style="animation-delay:320ms"><text x="28" y="163" class="m" font-size="12.5" fill="#e0af68" font-weight="400" text-anchor="start">b57c155</text>
+      <text x="96" y="163" class="m" font-size="12.5" fill="#bb9af7" font-weight="400" text-anchor="start">Calculator_REST_API</text>
+      <text x="296" y="163" class="m" font-size="12.5" fill="#9aa5ce" font-weight="400" text-anchor="start">Merge pull request #7 from Paradox-73/demo/readme-1</text>
+      <text x="832" y="163" class="m" font-size="11.5" fill="#565f89" font-weight="400" text-anchor="end">8d ago</text></g><g class="fx" style="animation-delay:380ms"><text x="28" y="186" class="m" font-size="12.5" fill="#e0af68" font-weight="400" text-anchor="start">28f3506</text>
+      <text x="96" y="186" class="m" font-size="12.5" fill="#bb9af7" font-weight="400" text-anchor="start">StackSense26</text>
+      <text x="296" y="186" class="m" font-size="12.5" fill="#9aa5ce" font-weight="400" text-anchor="start">README banner</text>
+      <text x="832" y="186" class="m" font-size="11.5" fill="#565f89" font-weight="400" text-anchor="end">7d ago</text></g>
+</svg>

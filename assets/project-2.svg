@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="420" height="176" viewBox="0 0 420 176" role="img" aria-label="PokerBots repository card">
+<title>PokerBots repository card</title>
+<defs></defs>
+<style>
+  .t{font-family:'Segoe UI',Ubuntu,'Helvetica Neue',Arial,sans-serif}
+  .m{font-family:'JetBrains Mono','Fira Code',ui-monospace,'SFMono-Regular',Consolas,monospace}
+  /* Visible by default: a renderer that ignores CSS animation still shows every card. */
+  g.fx{animation:in .6s ease-out both}
+  @keyframes in{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+  @keyframes grow{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+  @keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+
+  @media (prefers-reduced-motion:reduce){*{animation:none!important}}
+</style>
+<rect width="420" height="176" rx="14" fill="#13141f"/>
+<rect x=".5" y=".5" width="419" height="175" rx="13.5" fill="none" stroke="#2f3449"/>
+<defs><linearGradient id="accent1" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#3572A5"/><stop offset="100%" stop-color="#3572A5" stop-opacity="0"/></linearGradient></defs>
+    <rect x="0" y="0" width="420" height="3" fill="url(#accent1)"/><g class="fx" style="animation-delay:60ms"><text x="24" y="42" class="m" font-size="15" fill="#7aa2f7" font-weight="700" text-anchor="start">PokerBots · Hakari</text></g><g class="fx" style="animation-delay:140ms"><text x="24" y="68" class="t" font-size="12" fill="#9aa5ce" font-weight="400" text-anchor="start">ALWAYS BET ON HAKARI. Hakari is a heads-up Discard Hold&apos;em</text></g><g class="fx" style="animation-delay:190ms"><text x="24" y="85" class="t" font-size="12" fill="#9aa5ce" font-weight="400" text-anchor="start">bot. Expected-value play with an opponent model, kept</text></g><g class="fx" style="animation-delay:240ms"><text x="24" y="102" class="t" font-size="12" fill="#9aa5ce" font-weight="400" text-anchor="start">close to sound play by an embedded CFR strategy.</text></g><g class="fx" style="animation-delay:260ms"><rect x="24" y="120" width="34" height="20" rx="10" fill="#1f2335" stroke="#2f3449"/>
+      <text x="41" y="134" class="t" font-size="10.5" fill="#9aa5ce" font-weight="400" text-anchor="middle">cfr</text></g><g class="fx" style="animation-delay:260ms"><rect x="64" y="120" width="204" height="20" rx="10" fill="#1f2335" stroke="#2f3449"/>
+      <text x="166" y="134" class="t" font-size="10.5" fill="#9aa5ce" font-weight="400" text-anchor="middle">counterfactual-regret-minimization</text></g><g class="fx" style="animation-delay:260ms"><rect x="274" y="120" width="78" height="20" rx="10" fill="#1f2335" stroke="#2f3449"/>
+      <text x="313" y="134" class="t" font-size="10.5" fill="#9aa5ce" font-weight="400" text-anchor="middle">game-theory</text></g><g class="fx" style="animation-delay:300ms"><circle cx="30" cy="155" r="5" fill="#3572A5"/>
+    <text x="42" y="159" class="t" font-size="11.5" fill="#565f89" font-weight="400" text-anchor="start">Python</text></g>
+</svg>

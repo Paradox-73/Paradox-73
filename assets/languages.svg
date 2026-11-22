@@ -21,30 +21,30 @@
       <rect x="190" y="88" width="580" height="14" rx="7" fill="#1f2335"/>
       <rect x="190" y="88" width="580" height="14" rx="7" fill="#3572A5"
         style="animation:grow .9s cubic-bezier(.2,.7,.3,1) both;animation-delay:260ms;transform-origin:190px 0"/>
-      <text x="832" y="100" class="m" font-size="12.5" fill="#9aa5ce" font-weight="400" text-anchor="end">39.1%</text></g><g class="fx" style="animation-delay:230ms"><circle cx="36" cy="125" r="5" fill="#00ADD8"/>
+      <text x="832" y="100" class="m" font-size="12.5" fill="#9aa5ce" font-weight="400" text-anchor="end">38.1%</text></g><g class="fx" style="animation-delay:230ms"><circle cx="36" cy="125" r="5" fill="#00ADD8"/>
       <text x="52" y="130" class="m" font-size="13" fill="#c0caf5" font-weight="400" text-anchor="start">Go</text>
       <rect x="190" y="118" width="580" height="14" rx="7" fill="#1f2335"/>
-      <rect x="190" y="118" width="378" height="14" rx="7" fill="#00ADD8"
+      <rect x="190" y="118" width="402" height="14" rx="7" fill="#00ADD8"
         style="animation:grow .9s cubic-bezier(.2,.7,.3,1) both;animation-delay:350ms;transform-origin:190px 0"/>
-      <text x="832" y="130" class="m" font-size="12.5" fill="#9aa5ce" font-weight="400" text-anchor="end">25.5%</text></g><g class="fx" style="animation-delay:300ms"><circle cx="36" cy="155" r="5" fill="#b07219"/>
+      <text x="832" y="130" class="m" font-size="12.5" fill="#9aa5ce" font-weight="400" text-anchor="end">26.4%</text></g><g class="fx" style="animation-delay:300ms"><circle cx="36" cy="155" r="5" fill="#b07219"/>
       <text x="52" y="160" class="m" font-size="13" fill="#c0caf5" font-weight="400" text-anchor="start">Java</text>
       <rect x="190" y="148" width="580" height="14" rx="7" fill="#1f2335"/>
-      <rect x="190" y="148" width="286" height="14" rx="7" fill="#b07219"
+      <rect x="190" y="148" width="304" height="14" rx="7" fill="#b07219"
         style="animation:grow .9s cubic-bezier(.2,.7,.3,1) both;animation-delay:440ms;transform-origin:190px 0"/>
-      <text x="832" y="160" class="m" font-size="12.5" fill="#9aa5ce" font-weight="400" text-anchor="end">19.3%</text></g><g class="fx" style="animation-delay:370ms"><circle cx="36" cy="185" r="5" fill="#3178c6"/>
+      <text x="832" y="160" class="m" font-size="12.5" fill="#9aa5ce" font-weight="400" text-anchor="end">20.0%</text></g><g class="fx" style="animation-delay:370ms"><circle cx="36" cy="185" r="5" fill="#3178c6"/>
       <text x="52" y="190" class="m" font-size="13" fill="#c0caf5" font-weight="400" text-anchor="start">TypeScript</text>
       <rect x="190" y="178" width="580" height="14" rx="7" fill="#1f2335"/>
-      <rect x="190" y="178" width="70" height="14" rx="7" fill="#3178c6"
+      <rect x="190" y="178" width="74" height="14" rx="7" fill="#3178c6"
         style="animation:grow .9s cubic-bezier(.2,.7,.3,1) both;animation-delay:530ms;transform-origin:190px 0"/>
-      <text x="832" y="190" class="m" font-size="12.5" fill="#9aa5ce" font-weight="400" text-anchor="end">4.7%</text></g><g class="fx" style="animation-delay:440ms"><circle cx="36" cy="215" r="5" fill="#f1e05a"/>
+      <text x="832" y="190" class="m" font-size="12.5" fill="#9aa5ce" font-weight="400" text-anchor="end">4.9%</text></g><g class="fx" style="animation-delay:440ms"><circle cx="36" cy="215" r="5" fill="#f1e05a"/>
       <text x="52" y="220" class="m" font-size="13" fill="#c0caf5" font-weight="400" text-anchor="start">JavaScript</text>
       <rect x="190" y="208" width="580" height="14" rx="7" fill="#1f2335"/>
-      <rect x="190" y="208" width="57" height="14" rx="7" fill="#f1e05a"
+      <rect x="190" y="208" width="46" height="14" rx="7" fill="#f1e05a"
         style="animation:grow .9s cubic-bezier(.2,.7,.3,1) both;animation-delay:620ms;transform-origin:190px 0"/>
-      <text x="832" y="220" class="m" font-size="12.5" fill="#9aa5ce" font-weight="400" text-anchor="end">3.8%</text></g><g class="fx" style="animation-delay:510ms"><circle cx="36" cy="245" r="5" fill="#00B4AB"/>
+      <text x="832" y="220" class="m" font-size="12.5" fill="#9aa5ce" font-weight="400" text-anchor="end">3.0%</text></g><g class="fx" style="animation-delay:510ms"><circle cx="36" cy="245" r="5" fill="#00B4AB"/>
       <text x="52" y="250" class="m" font-size="13" fill="#c0caf5" font-weight="400" text-anchor="start">Dart</text>
       <rect x="190" y="238" width="580" height="14" rx="7" fill="#1f2335"/>
-      <rect x="190" y="238" width="32" height="14" rx="7" fill="#00B4AB"
+      <rect x="190" y="238" width="34" height="14" rx="7" fill="#00B4AB"
         style="animation:grow .9s cubic-bezier(.2,.7,.3,1) both;animation-delay:710ms;transform-origin:190px 0"/>
-      <text x="832" y="250" class="m" font-size="12.5" fill="#9aa5ce" font-weight="400" text-anchor="end">2.1%</text></g>
+      <text x="832" y="250" class="m" font-size="12.5" fill="#9aa5ce" font-weight="400" text-anchor="end">2.2%</text></g>
 </svg>

@@ -18,22 +18,22 @@
       <rect x="30" y="76" width="191" height="74" rx="10" fill="none" stroke="#9ece6a" stroke-opacity=".22"/>
       <rect x="44" y="90" width="163" height="3" rx="1.5" fill="#9ece6a" opacity=".85"
         style="animation:grow .8s cubic-bezier(.2,.7,.3,1) both;animation-delay:280ms;transform-origin:44px 0"/>
-      <text x="44" y="124" class="m" font-size="24" fill="#9ece6a" font-weight="700" text-anchor="start">2,924</text>
+      <text x="44" y="124" class="m" font-size="24" fill="#9ece6a" font-weight="700" text-anchor="start">2,942</text>
       <text x="44" y="140" class="t" font-size="9" fill="#565f89" font-weight="400" text-anchor="start" letter-spacing="1.4">CONTRIBUTIONS</text></g><g class="fx" style="animation-delay:175ms"><rect x="233" y="76" width="191" height="74" rx="10" fill="#1f2335"/>
       <rect x="233" y="76" width="191" height="74" rx="10" fill="none" stroke="#7aa2f7" stroke-opacity=".22"/>
       <rect x="247" y="90" width="163" height="3" rx="1.5" fill="#7aa2f7" opacity=".85"
         style="animation:grow .8s cubic-bezier(.2,.7,.3,1) both;animation-delay:345ms;transform-origin:247px 0"/>
-      <text x="247" y="124" class="m" font-size="24" fill="#7aa2f7" font-weight="700" text-anchor="start">1,920</text>
+      <text x="247" y="124" class="m" font-size="24" fill="#7aa2f7" font-weight="700" text-anchor="start">1,932</text>
       <text x="247" y="140" class="t" font-size="9" fill="#565f89" font-weight="400" text-anchor="start" letter-spacing="1.4">COMMITS</text></g><g class="fx" style="animation-delay:240ms"><rect x="436" y="76" width="191" height="74" rx="10" fill="#1f2335"/>
       <rect x="436" y="76" width="191" height="74" rx="10" fill="none" stroke="#bb9af7" stroke-opacity=".22"/>
       <rect x="450" y="90" width="163" height="3" rx="1.5" fill="#bb9af7" opacity=".85"
         style="animation:grow .8s cubic-bezier(.2,.7,.3,1) both;animation-delay:410ms;transform-origin:450px 0"/>
-      <text x="450" y="124" class="m" font-size="24" fill="#bb9af7" font-weight="700" text-anchor="start">53</text>
+      <text x="450" y="124" class="m" font-size="24" fill="#bb9af7" font-weight="700" text-anchor="start">54</text>
       <text x="450" y="140" class="t" font-size="9" fill="#565f89" font-weight="400" text-anchor="start" letter-spacing="1.4">PULL REQUESTS</text></g><g class="fx" style="animation-delay:305ms"><rect x="639" y="76" width="191" height="74" rx="10" fill="#1f2335"/>
       <rect x="639" y="76" width="191" height="74" rx="10" fill="none" stroke="#ff9e64" stroke-opacity=".22"/>
       <rect x="653" y="90" width="163" height="3" rx="1.5" fill="#ff9e64" opacity=".85"
         style="animation:grow .8s cubic-bezier(.2,.7,.3,1) both;animation-delay:475ms;transform-origin:653px 0"/>
-      <text x="653" y="124" class="m" font-size="24" fill="#ff9e64" font-weight="700" text-anchor="start">51</text>
+      <text x="653" y="124" class="m" font-size="24" fill="#ff9e64" font-weight="700" text-anchor="start">54</text>
       <text x="653" y="140" class="t" font-size="9" fill="#565f89" font-weight="400" text-anchor="start" letter-spacing="1.4">ISSUES</text></g><g class="fx" style="animation-delay:370ms"><rect x="30" y="162" width="191" height="74" rx="10" fill="#1f2335"/>
       <rect x="30" y="162" width="191" height="74" rx="10" fill="none" stroke="#7dcfff" stroke-opacity=".22"/>
       <rect x="44" y="176" width="163" height="3" rx="1.5" fill="#7dcfff" opacity=".85"

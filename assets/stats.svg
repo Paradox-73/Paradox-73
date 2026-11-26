@@ -18,7 +18,7 @@
       <rect x="30" y="76" width="191" height="74" rx="10" fill="none" stroke="#9ece6a" stroke-opacity=".22"/>
       <rect x="44" y="90" width="163" height="3" rx="1.5" fill="#9ece6a" opacity=".85"
         style="animation:grow .8s cubic-bezier(.2,.7,.3,1) both;animation-delay:280ms;transform-origin:44px 0"/>
-      <text x="44" y="124" class="m" font-size="24" fill="#9ece6a" font-weight="700" text-anchor="start">2,942</text>
+      <text x="44" y="124" class="m" font-size="24" fill="#9ece6a" font-weight="700" text-anchor="start">2,944</text>
       <text x="44" y="140" class="t" font-size="9" fill="#565f89" font-weight="400" text-anchor="start" letter-spacing="1.4">CONTRIBUTIONS</text></g><g class="fx" style="animation-delay:175ms"><rect x="233" y="76" width="191" height="74" rx="10" fill="#1f2335"/>
       <rect x="233" y="76" width="191" height="74" rx="10" fill="none" stroke="#7aa2f7" stroke-opacity=".22"/>
       <rect x="247" y="90" width="163" height="3" rx="1.5" fill="#7aa2f7" opacity=".85"
